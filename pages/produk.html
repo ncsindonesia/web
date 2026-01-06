@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCS | Produk</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/logo_ncs/logo_head.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/logo_ncs/logo_head.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/logo_ncs/logo_head.png">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../css/style.css"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body class="text-gray-800">
+
+<!-- TOP HEADER -->
+<div class="bg-white border-b text-sm">
+  <div class="max-w-7xl mx-auto px-8 py-2 flex justify-right gap-2 items-center">
+    
+    <button
+      onclick="openRegion()"
+      class="flex items-center gap-4 md:gap-2 border px-3 py-1 rounded hover:bg-gray-100"
+    >
+      <i class="fa fa-map-marker text-green-600"></i>
+      INDONESIA | IND
+    </button>
+
+    <a href="../pages/kontak.html" class="flex items-center gap-2 border px-3 py-1 rounded hover:bg-gray-100">HUBUNGI KAMI</a>
+  </div>
+</div>
+
+<!-- REGION POPUP -->
+<div
+  id="regionPopup"
+  class="fixed inset-0 bg-black/50 z-50 hidden"
+  onclick="closeRegion()"
+>
+
+  <!-- POPUP -->
+  <div
+    class="absolute top-0 left-0 right-0 bg-white"
+    onclick="event.stopPropagation()"
+  >
+
+    <!-- CLOSE -->
+    <button
+      onclick="closeRegion()"
+      class="absolute top-6 right-6 text-2xl text-red-600"
+    >
+      ✕
+    </button>
+
+    <div class="max-w-7xl mx-auto px-8 py-16">
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- LEFT -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6">
+            Website Global<br>
+            Neo Crop Solutions.
+          </h2>
+
+          <p class="text-gray-500 mb-4">CORPORATE</p>
+
+          <a href="https://neocropsolutions.com/"
+            class="flex items-center gap-4 p-4">
+            <img src="../img/negara/singapura.png" class="w-12">
+            <div>
+              <strong>Singapore</strong><br>
+              <span class="text-green-600">Singapore</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+          <p class="text-xl mb-6">
+            Apakah Anda Mencari Informasi Tentang Produk<br>
+            Dan Layanan Berdasarkan Wilayah?
+          </p>
+
+          <p class="text-gray-500 mb-4">ASIA PASIFIC</p>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+
+            <a href="../index.html" class="flex gap-4 items-center">
+              <img src="../img/negara/indonesia.png" class="w-12">
+              <div>
+                <strong>Indonesia</strong><br>
+                <span class="text-green-600">Indonesia</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 items-center">
+              <img src="../img/negara/india.png" class="w-12">
+              <div>
+                <strong>India</strong><br>
+                <span class="text-green-600">India</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 items-center">
+              <img src="../img/negara/philipine.png" class="w-12">
+              <div>
+                <strong>Philippines</strong><br>
+                <span class="text-green-600">Philippines</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 items-center">
+              <img src="../img/negara/myanmar.png" class="w-12">
+              <div>
+                <strong>Myanmar</strong><br>
+                <span class="text-green-600">Myanmar</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<!-- HEADER -->
+<header id="mainHeader" class="bg-white border-b fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index.html" class="nav-link relative py-2">HOME</a>
+        <a href="../pages/tentang.html" class="nav-link  relative py-2">TENTANG KAMI</a>
+        <a href="../pages/produk.html" class="nav-link relative py-2">PRODUK</a>
+        <a href="../pages/testimoni.html" class="nav-link relative py-2">TESTIMONI</a>
+        <a href="../pages/solusi.html" class="nav-link relative py-2">SOLUSI</a>
+        <a href="../pages/berita.html" class="nav-link relative py-2">BERITA</a>
+        <a href="../pages/karir.html" class="nav-link relative py-2">KARIR</a>
+        <a href="../pages/kontak.html" class="nav-link relative py-2">KONTAK</a>
+      </nav>
+
+      <!-- LOGO -->
+      <img src="../img/logo_ncs/logo.png" alt="Neo Crop" class="h-10">
+
+      <!-- MOBILE BUTTON -->
+      <button
+        id="mobileBtn"
+        class="md:hidden text-3xl focus:outline-none"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div
+    id="mobileNav"
+    class="md:hidden hidden bg-white border-t shadow-lg"
+  >
+    <nav class="flex flex-col px-8 py-6 gap-4 text-sm font-medium">
+      <a href="../index.html" class="mobile-link">HOME</a>
+      <a href="../pages/tentang.html" class="mobile-link">TENTANG KAMI</a>
+      <a href="../pages/produk.html" class="mobile-link">PRODUK</a>
+      <a href="../pages/testimoni.html" class="mobile-link">TESTIMONI</a>
+      <a href="../pages/solusi.html" class="mobile-link">SOLUSI</a>
+      <a href="../pages/berita.html" class="mobile-link">BERITA</a>
+      <a href="../pages/karir.html" class="mobile-link">KARIR</a>
+      <a href="../pages/kontak.html" class="mobile-link">KONTAK</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="relative h-[350px] md:h-[450px] overflow-hidden">
+
+  <!-- BACKGROUND IMAGE -->
+  <img
+    src="../img/bg/bg_produk.png"
+    alt="Background Produk"
+    class="absolute inset-0 w-full h-full object-cover z-0"
+  >
+
+  <!-- DIAGONAL OVERLAY -->
+  <div
+    class="
+      absolute inset-0 z-10
+      bg-gradient-to-r
+      from-black/60 via-black/40 to-transparent
+
+      [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
+      md:[clip-path:polygon(0_0,60%_0,50%_100%,0_100%)]
+    "
+  ></div>
+
+  <!-- TEXT -->
+  <div
+    class="
+      absolute z-20
+      top-1/2 left-[5%]
+      -translate-y-1/2
+      text-white
+      max-w-xl
+    "
+  >
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider">
+      PRODUK NCS
+    </h2>
+
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider text-[#A2CC3B] mt-2">
+      UNGGULAN!
+    </h2>
+
+    <p class="mt-4 text-sm md:text-lg font-light">
+      Berkualitas, Hasil Panen Maksimal
+    </p>
+  </div>
+
+</section>
+<!-- END HERO -->
+
+<!-- PRODUK UNGGULAN -->
+<section id="produk" class="pt-20 pb-10 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- CARD 1 -->
+      <a href="../pages/pestisida/mepeak.html"
+         class="relative group h-56 rounded-xl overflow-hidden shadow-lg">
+
+        <img src="../img/padi.png"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <!-- overlay diagonal -->
+        <div class="absolute inset-0 bg-green-700/70"
+        style="clip-path: polygon(0 0, 75% 0, 45% 100%, 0% 100%);"></div>
+
+        <!-- text -->
+        <div class="relative z-10 p-6 text-white">
+          <h3 class="text-lg font-bold uppercase leading-snug">
+            Pestisida<br>Unggulan
+          </h3>
+          <p class="mt-2 text-sm opacity-90">
+            Lihat Selengkapnya →
+          </p>
+        </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="../pages/pupuk/levoamin.html"
+         class="relative group h-56 rounded-xl overflow-hidden shadow-lg">
+
+        <img src="../img/sayur.png"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="absolute inset-0 bg-green-700/70"
+        style="clip-path: polygon(0 0, 75% 0, 45% 100%, 0% 100%);"></div>
+
+        <div class="relative z-10 p-6 text-white">
+          <h3 class="text-lg font-bold uppercase leading-snug">
+            Pupuk<br>Unggulan
+          </h3>
+          <p class="mt-2 text-sm opacity-90">
+            Lihat Selengkapnya →
+          </p>
+        </div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="#"
+         class="relative group h-56 rounded-xl overflow-hidden shadow-lg">
+
+        <img src="../img/cabe.png"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="absolute inset-0 bg-green-700/70"
+        style="clip-path: polygon(0 0, 75% 0, 45% 100%, 0% 100%);"></div>
+
+        <div class="relative z-10 p-6 text-white">
+          <h3 class="text-lg font-bold uppercase leading-snug">
+            Benih<br>Unggulan
+          </h3>
+          <p class="mt-2 text-sm opacity-90">
+            Lihat Selengkapnya →
+          </p>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUK KAMI -->
+<section class="pt-10 pb-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- TITLE -->
+    <h2 class="text-3xl font-bold mb-12">PRODUK KAMI</h2>
+
+    <div class="space-y-16">
+
+    <!-- CARD 1 -->
+    <div class="grid md:grid-cols-2 gap-8 items-center border rounded-lg overflow-hidden">
+    <!-- TEXT -->
+    <div class="p-8">
+        <h3 class="text-green-700 text-xl font-bold mb-4">PESTISIDA</h3>
+        <p class="text-gray-600 mb-6">
+        Produk pestisida kami telah berhasil lolos uji praktik untuk membunuh,
+        mengendalikan, atau mengusir organisme pengganggu seperti hama, penyakit,
+        atau gulma yang dapat merusak tanaman atau hasil pertanian.
+        </p>
+        <a href="../pages/produk/pestisida.html" class="inline-block bg-green-700 text-white px-6 py-2 rounded">
+        Lihat Produk
+        </a>
+    </div>
+    <!-- IMAGE -->
+    <div class="h-64 md:h-80 overflow-hidden rounded-lg">
+        <img
+        src="../img/padi.png"
+        class="w-full h-full object-cover"
+        alt="Pestisida"
+        >
+    </div>
+    </div>
+
+    <!-- CARD 2 (ZIG-ZAG) -->
+    <div class="grid md:grid-cols-2 gap-8 items-center border rounded-lg overflow-hidden">
+    <!-- IMAGE -->
+    <div class="order-1 md:order-none h-64 md:h-80 overflow-hidden rounded-lg">
+        <img
+        src="../img/sayur.png"
+        class="w-full h-full object-cover"
+        alt="Pupuk"
+        >
+    </div>
+    <!-- TEXT -->
+    <div class="p-8">
+        <h3 class="text-green-700 text-xl font-bold mb-4">PUPUK</h3>
+        <p class="text-gray-600 mb-6">
+        Pupuk yang kami gunakan mengandung bahan organik tinggi,
+        khususnya asam amino. Dipercaya dapat memberikan pertumbuhan
+        optimal, kualitas panen unggul, ramah lingkungan, penggunaan
+        fleksibel serta efektif dan efisien.
+        </p>
+        <a href="../pages/produk/pupuk.html" class="inline-block bg-green-700 text-white px-6 py-2 rounded">
+        Lihat Produk
+        </a>
+    </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="grid md:grid-cols-2 gap-8 items-center border rounded-lg overflow-hidden">
+    <!-- TEXT -->
+    <div class="p-8">
+        <h3 class="text-green-700 text-xl font-bold mb-4">BENIH</h3>
+        <p class="text-gray-600 mb-6">
+        Benih pilihan dan berkualitas tinggi menjadi prioritas kami
+        untuk mendapatkan hasil yang maksimal. Produk benih kami
+        telah menjadi pilihan para petani sejak lama.
+        </p>
+        <a href="../pages/produk/benih.html" class="inline-block bg-green-700 text-white px-6 py-2 rounded">
+        Lihat Produk
+        </a>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="h-64 md:h-80 overflow-hidden rounded-lg">
+        <img
+        src="../img/cabe.png"
+        class="w-full h-full object-cover"
+        alt="Benih"
+        >
+    </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-green-800 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- TOP FOOTER -->
+    <div class="grid gap-12 md:grid-cols-4">
+
+      <!-- LOGO & DESC -->
+      <div>
+        <img src="../img/logo_ncs/footer_logo.png" alt="Neo Crop" class="h-10 mb-4">
+        <p class="text-sm text-green-100 mb-6">
+          Neo Crop Solutions berkomitmen menghadirkan solusi pertanian
+          yang efisien, berkelanjutan, dan inovatif untuk masa depan.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="flex gap-4">
+          <a href="https://www.facebook.com/profile.php?id=61581358156948" class="hover:text-lime-300">Facebook</a>
+          <a href="https://www.instagram.com/neocropsolutions_id?igsh=MXhidmxrN2JrdzA5aQ==" class="hover:text-lime-300">Instagram</a>
+          <a href="https://www.linkedin.com/company/neo-crop-solutions/" class="hover:text-lime-300">LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div>
+        <h4 class="font-semibold mb-4">ABOUT US</h4>
+        <ul class="space-y-2 text-sm text-green-100">
+          <li><a href="../pages/tentang.html" class="hover:text-white">Tentang Kami</a></li>
+          <li><a href="../pages/produk.html" class="hover:text-white">Produk</a></li>
+          <li><a href="../pages/solusi.html" class="hover:text-white">Solusi</a></li>
+          <li><a href="../pages/berita.html" class="hover:text-white">Berita</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="font-semibold mb-4">SERVICES</h4>
+        <ul class="space-y-2 text-sm text-green-100">
+          <li><a href="../pages/produk/pestisida.html" class="hover:text-white">Pestisida</a></li>
+          <li><a href="../pages/produk/pupuk.html" class="hover:text-white">Pupuk</a></li>
+          <li><a href="../pages/produk/benih.html" class="hover:text-white">Benih</a></li>
+          <li><a href="../pages/kontak.html" class="hover:text-white">Konsultasi</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div>
+        <h4 class="font-semibold mb-4">ANDA PUNYA PERTANYAAN?</h4>
+        <p class="text-sm text-green-100 mb-4">
+          Kami Disini Siap Membantu.
+        </p>
+        <a href="../pages/kontak.html"
+           class="inline-block bg-lime-400 text-green-900 px-6 py-2 rounded font-semibold hover:bg-lime-300 transition">
+          HUBUNGI KAMI
+        </a>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="border-t border-green-700 mt-12 pt-6 flex flex-col md:flex-row justify-between text-sm text-green-200 gap-4">
+      <p>© 2025 Neo Crop Solutions. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Terms & Conditions</a>
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/6281517733335"
+   class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

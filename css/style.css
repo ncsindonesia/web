@@ -1,0 +1,25 @@
+body { font-family: 'Poppins', sans-serif; }
+
+@media (max-width: 768px) {
+.hero-diagonal-mobile {
+    clip-path: polygon(
+    0 0,
+    90% 0,
+    90% 100%,
+    0 100%
+    ) !important;
+}
+}
+
+/* produk.html */
+.clip-diagonal-left {
+  clip-path: polygon(0 0, 75% 0, 45% 100%, 0% 100%);
+}
+
+.clip-diagonal-center {
+  clip-path: polygon(0 0, 60% 0, 100% 100%, 40% 100%);
+}
+
+.clip-diagonal-right {
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 55% 100%);
+}

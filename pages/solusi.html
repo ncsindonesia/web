@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCS | Solusi</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/logo_ncs/logo_head.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/logo_ncs/logo_head.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/logo_ncs/logo_head.png">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../css/style.css"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body class="text-gray-800">
+
+<!-- TOP HEADER -->
+<div class="bg-white border-b text-sm">
+  <div class="max-w-7xl mx-auto px-8 py-2 flex justify-right gap-2 items-center">
+    
+    <button
+      onclick="openRegion()"
+      class="flex items-center gap-4 md:gap-2 border px-3 py-1 rounded hover:bg-gray-100"
+    >
+      <i class="fa fa-map-marker text-green-600"></i>
+      INDONESIA | IND
+    </button>
+
+    <a href="../pages/kontak.html" class="flex items-center gap-2 border px-3 py-1 rounded hover:bg-gray-100">HUBUNGI KAMI</a>
+  </div>
+</div>
+
+<!-- REGION POPUP -->
+<div
+  id="regionPopup"
+  class="fixed inset-0 bg-black/50 z-50 hidden"
+  onclick="closeRegion()"
+>
+
+  <!-- POPUP -->
+  <div
+    class="absolute top-0 left-0 right-0 bg-white"
+    onclick="event.stopPropagation()"
+  >
+
+    <!-- CLOSE -->
+    <button
+      onclick="closeRegion()"
+      class="absolute top-6 right-6 text-2xl text-red-600"
+    >
+      ✕
+    </button>
+
+    <div class="max-w-7xl mx-auto px-8 py-16">
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- LEFT -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6">
+            Website Global<br>
+            Neo Crop Solutions.
+          </h2>
+
+          <p class="text-gray-500 mb-4">CORPORATE</p>
+
+          <a href="https://neocropsolutions.com/"
+            class="flex items-center gap-4 p-4">
+            <img src="../img/negara/singapura.png" class="w-12">
+            <div>
+              <strong>Singapore</strong><br>
+              <span class="text-green-600">Singapore</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+          <p class="text-xl mb-6">
+            Apakah Anda Mencari Informasi Tentang Produk<br>
+            Dan Layanan Berdasarkan Wilayah?
+          </p>
+
+          <p class="text-gray-500 mb-4">ASIA PASIFIC</p>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+
+            <a href="../index.html" class="flex gap-4 items-center">
+              <img src="../img/negara/indonesia.png" class="w-12">
+              <div>
+                <strong>Indonesia</strong><br>
+                <span class="text-green-600">Indonesia</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 items-center">
+              <img src="../img/negara/india.png" class="w-12">
+              <div>
+                <strong>India</strong><br>
+                <span class="text-green-600">India</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 items-center">
+              <img src="../img/negara/philipine.png" class="w-12">
+              <div>
+                <strong>Philippines</strong><br>
+                <span class="text-green-600">Philippines</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 items-center">
+              <img src="../img/negara/myanmar.png" class="w-12">
+              <div>
+                <strong>Myanmar</strong><br>
+                <span class="text-green-600">Myanmar</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header id="mainHeader" class="bg-white border-b fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index.html" class="nav-link relative py-2">HOME</a>
+        <a href="../pages/tentang.html" class="nav-link  relative py-2">TENTANG KAMI</a>
+        <a href="../pages/produk.html" class="nav-link relative py-2">PRODUK</a>
+        <a href="../pages/testimoni.html" class="nav-link relative py-2">TESTIMONI</a>
+        <a href="../pages/solusi.html" class="nav-link relative py-2">SOLUSI</a>
+        <a href="../pages/berita.html" class="nav-link relative py-2">BERITA</a>
+        <a href="../pages/karir.html" class="nav-link relative py-2">KARIR</a>
+        <a href="../pages/kontak.html" class="nav-link relative py-2">KONTAK</a>
+      </nav>
+
+      <!-- LOGO -->
+      <img src="../img/logo_ncs/logo.png" alt="Neo Crop" class="h-10">
+
+      <!-- MOBILE BUTTON -->
+      <button
+        id="mobileBtn"
+        class="md:hidden text-3xl focus:outline-none"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div
+    id="mobileNav"
+    class="md:hidden hidden bg-white border-t shadow-lg"
+  >
+    <nav class="flex flex-col px-8 py-6 gap-4 text-sm font-medium">
+      <a href="../index.html" class="mobile-link">HOME</a>
+      <a href="../pages/tentang.html" class="mobile-link">TENTANG KAMI</a>
+      <a href="../pages/produk.html" class="mobile-link">PRODUK</a>
+      <a href="../pages/testimoni.html" class="mobile-link">TESTIMONI</a>
+      <a href="../pages/solusi.html" class="mobile-link">SOLUSI</a>
+      <a href="../pages/berita.html" class="mobile-link">BERITA</a>
+      <a href="../pages/karir.html" class="mobile-link">KARIR</a>
+      <a href="../pages/kontak.html" class="mobile-link">KONTAK</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="relative h-[350px] md:h-[450px] overflow-hidden">
+
+  <!-- BACKGROUND IMAGE -->
+  <img
+    src="../img/bg/bg_solusi.png"
+    alt="Background Produk"
+    class="absolute inset-0 w-full h-full object-cover z-0"
+  >
+
+  <!-- DIAGONAL OVERLAY -->
+  <div
+    class="
+      absolute inset-0 z-10
+      bg-gradient-to-r
+      from-black/60 via-black/40 to-transparent
+
+      [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
+      md:[clip-path:polygon(0_0,60%_0,50%_100%,0_100%)]
+    "
+  ></div>
+
+  <!-- TEXT -->
+  <div
+    class="
+      absolute z-20
+      top-1/2 left-[5%]
+      -translate-y-1/2
+      text-white
+      max-w-xl
+    "
+  >
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider">
+      SOLUSI NYATA
+    </h2>
+
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider text-[#A2CC3B] mt-2">
+      PETANI BAHAGIA
+    </h2>
+
+    <p class="mt-4 text-sm md:text-lg font-light">
+      Solusi Hemat, Petani Pintar
+    </p>
+  </div>
+
+</section>
+<!-- END HERO -->
+
+<!-- MENGAPA MEMILIH -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6 leading-snug">
+      Mengapa Memilih
+      <span class="text-green-700">Neo Crop Solutions</span>
+    </h2>
+
+    <p class="text-gray-600 leading-relaxed w-full mb-4">
+      Kami berkomitmen untuk menjadi yang terdepan dalam inovasi pertanian,
+      menghadirkan solusi cerdas dan efisien bagi para petani di kawasan Asia
+      Selatan. Kami meningkatkan nilai bagi petani dan rantai nilai pertanian
+      dengan menekankan edukasi petani dan membangun kemitraan, dengan tujuan
+      mendorong peningkatan signifikan dalam praktik pertanian.
+    </p>
+
+    <p class="text-gray-600 leading-relaxed w-full">
+      Pendiri kami, Bapak Surin Shah, memanfaatkan pengalaman luasnya di industri
+      kimia pertanian dan pemahaman tentang lanskap pasar yang dinamis untuk
+      bermitra dengan pemasok yang berfokus pada penelitian dan pengembangan (R&D),
+      dalam memenuhi kebutuhan petani yang terus berkembang. Dedikasi terhadap
+      inovasi ini memastikan Neo Crop Solutions dapat menawarkan solusi terbaru
+      dan paling efektif.
+    </p>
+
+  </div>
+</section>
+
+<!-- MENJEMBATANI KESENJANGAN -->
+<section class="py-20 bg-gray-400">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- TITLE -->
+    <h3 class="text-white text-xl md:text-2xl font-extrabold mb-10 leading-snug">
+      MENJEMBATANI KESENJANGAN KE PASAR<br>
+      <span class="text-lime-300">PETANI KECIL YANG TERFRAGMENTASI</span>
+    </h3>
+
+    <!-- CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+      <!-- CARD 1 -->
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-green-700 text-white w-6 h-6 rounded flex items-center justify-center text-sm font-bold">
+            1
+          </span>
+          <h4 class="font-bold">Keterlibatan Pelanggan</h4>
+        </div>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Komunikasi langsung dengan pelanggan sangat penting untuk memahami
+          wawasan langsung tentang kebutuhan mereka. Interaksi ini membantu
+          kami memahami kebutuhan mereka, mengatasi masalah, dan mengumpulkan
+          umpan balik yang berharga.
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-green-700 text-white w-6 h-6 rounded flex items-center justify-center text-sm font-bold">
+            2
+          </span>
+          <h4 class="font-bold">Berbagi Pengetahuan</h4>
+        </div>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Kami memprioritaskan pengembangan sumber daya dan lokakarya
+          yang mendukung wawasan praktis tentang teknik pertanian modern
+          dengan solusi yang tepat, sekaligus mempromosikan keberlanjutan.
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-green-700 text-white w-6 h-6 rounded flex items-center justify-center text-sm font-bold">
+            3
+          </span>
+          <h4 class="font-bold">Kemitraan Kolaboratif</h4>
+        </div>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Kami bermaksud memperluas kemitraan dengan universitas pertanian,
+          lembaga penelitian, pemasok berbasis inovasi, dan pemerintah untuk
+          membantu petani kecil mencapai hasil maksimal dari pertanian modern.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- FOOTER TEXT -->
+    <p class="text-white/90 text-sm leading-relaxed w-full">
+      Di Neo Crop Solutions, kami percaya bahwa pertumbuhan berkelanjutan berarti
+      menyediakan solusi yang tidak hanya meningkatkan hasil panen tetapi juga
+      memastikan kelangsungan bisnis bagi petani. Dengan menawarkan solusi
+      perlindungan dan nutrisi tanaman yang berkualitas tinggi dan inovatif,
+      kami membantu petani meningkatkan produktivitas dan profitabilitas jangka
+      panjang.
+    </p>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-green-800 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- TOP FOOTER -->
+    <div class="grid gap-12 md:grid-cols-4">
+
+      <!-- LOGO & DESC -->
+      <div>
+        <img src="../img/logo_ncs/footer_logo.png" alt="Neo Crop" class="h-10 mb-4">
+        <p class="text-sm text-green-100 mb-6">
+          Neo Crop Solutions berkomitmen menghadirkan solusi pertanian
+          yang efisien, berkelanjutan, dan inovatif untuk masa depan.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="flex gap-4">
+          <a href="https://www.facebook.com/profile.php?id=61581358156948" class="hover:text-lime-300">Facebook</a>
+          <a href="https://www.instagram.com/neocropsolutions_id?igsh=MXhidmxrN2JrdzA5aQ==" class="hover:text-lime-300">Instagram</a>
+          <a href="https://www.linkedin.com/company/neo-crop-solutions/" class="hover:text-lime-300">LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div>
+        <h4 class="font-semibold mb-4">ABOUT US</h4>
+        <ul class="space-y-2 text-sm text-green-100">
+          <li><a href="../pages/tentang.html" class="hover:text-white">Tentang Kami</a></li>
+          <li><a href="../pages/produk.html" class="hover:text-white">Produk</a></li>
+          <li><a href="../pages/solusi.html" class="hover:text-white">Solusi</a></li>
+          <li><a href="../pages/berita.html" class="hover:text-white">Berita</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="font-semibold mb-4">SERVICES</h4>
+        <ul class="space-y-2 text-sm text-green-100">
+          <li><a href="../pages/produk/pestisida.html" class="hover:text-white">Pestisida</a></li>
+          <li><a href="../pages/produk/pupuk.html" class="hover:text-white">Pupuk</a></li>
+          <li><a href="../pages/produk/benih.html" class="hover:text-white">Benih</a></li>
+          <li><a href="../pages/kontak.html" class="hover:text-white">Konsultasi</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div>
+        <h4 class="font-semibold mb-4">ANDA PUNYA PERTANYAAN?</h4>
+        <p class="text-sm text-green-100 mb-4">
+          Kami Disini Siap Membantu.
+        </p>
+        <a href="../pages/kontak.html"
+           class="inline-block bg-lime-400 text-green-900 px-6 py-2 rounded font-semibold hover:bg-lime-300 transition">
+          HUBUNGI KAMI
+        </a>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="border-t border-green-700 mt-12 pt-6 flex flex-col md:flex-row justify-between text-sm text-green-200 gap-4">
+      <p>© 2025 Neo Crop Solutions. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Terms & Conditions</a>
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/6281517733335"
+   class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
