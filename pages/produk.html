@@ -20,6 +20,41 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <style>
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(100%);
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .hero-slide.active {
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .hero-slide.prev {
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: white;
+    transform: scale(1.2);
+  }
+</style>
+
 </head>
 <body class="text-gray-800">
 
@@ -186,46 +221,21 @@
 <!-- HERO SECTION -->
 <section class="relative h-[350px] md:h-[450px] overflow-hidden">
 
-  <!-- BACKGROUND IMAGE -->
-  <img
-    src="../img/bg/bg_produk.png"
-    alt="Background Produk"
-    class="absolute inset-0 w-full h-full object-cover z-0"
-  >
+  <!-- BACKGROUND SLIDES -->
+  <div id="heroSlides" class="absolute inset-0 z-0">
+    <img src="../img/bg/produk/1.png" class="hero-slide active">
+    <img src="../img/bg/produk/2.png" class="hero-slide">
+    <img src="../img/bg/produk/3.png" class="hero-slide">
+  </div>
 
-  <!-- DIAGONAL OVERLAY -->
-  <div
-    class="
-      absolute inset-0 z-10
-      bg-gradient-to-r
-      from-black/60 via-black/40 to-transparent
+  <!-- OVERLAY BLACK -->
+  <div class="absolute inset-0 bg-black/10 z-10"></div>
 
-      [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
-      md:[clip-path:polygon(0_0,60%_0,50%_100%,0_100%)]
-    "
-  ></div>
-
-  <!-- TEXT -->
-  <div
-    class="
-      absolute z-20
-      top-1/2 left-[5%]
-      -translate-y-1/2
-      text-white
-      max-w-xl
-    "
-  >
-    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider">
-      PRODUK NCS
-    </h2>
-
-    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider text-[#A2CC3B] mt-2">
-      UNGGULAN!
-    </h2>
-
-    <p class="mt-4 text-sm md:text-lg font-light">
-      Berkualitas, Hasil Panen Maksimal
-    </p>
+  <!-- DOT INDICATOR -->
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
   </div>
 
 </section>
@@ -467,6 +477,34 @@
    class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<script>
+  const slides = document.querySelectorAll('.hero-slide')
+  const dots = document.querySelectorAll('.dot')
+  let current = 0
+
+  function showSlide(next) {
+    slides.forEach(slide => slide.classList.remove('active', 'prev'))
+    dots.forEach(dot => dot.classList.remove('active'))
+
+    slides[current].classList.add('prev')
+    slides[next].classList.add('active')
+    dots[next].classList.add('active')
+
+    current = next
+  }
+
+  // AUTO SLIDE
+  setInterval(() => {
+    let next = (current + 1) % slides.length
+    showSlide(next)
+  }, 4000)
+
+  // DOT CLICK
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index))
+  })
+</script>
 
 <script src="../js/script.js"></script>
 

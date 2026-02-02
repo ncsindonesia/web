@@ -206,3 +206,29 @@ sendEmailBtn.addEventListener('click', () => {
     `mailto:andikarahmathidayatulloh@gmail.com?subject=${subject}&body=${body}`
 })
 
+// HERO SLIDER
+  const slides = document.querySelectorAll('.hero-slide')
+  const dots = document.querySelectorAll('.dot')
+  let current = 0
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'))
+    dots.forEach(dot => dot.classList.remove('active'))
+
+    slides[index].classList.add('active')
+    dots[index].classList.add('active')
+    current = index
+  }
+
+  // auto slide
+  setInterval(() => {
+    let next = (current + 1) % slides.length
+    showSlide(next)
+  }, 4000)
+
+  // klik dot
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index))
+  })
+
+
