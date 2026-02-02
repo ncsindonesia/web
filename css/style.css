@@ -23,4 +23,3 @@ body { font-family: 'Poppins', sans-serif; }
 .clip-diagonal-right {
   clip-path: polygon(25% 0, 100% 0, 100% 100%, 55% 100%);
 }
-

@@ -8,227 +8,137 @@ function closeRegion() {
     document.getElementById('regionPopup').classList.remove('flex')
   }
 
-// ===== FIX HEADER ON SCROLL =====
-  const header = document.getElementById('mainHeader')
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      header.classList.add(
-        'fixed',
-        'top-0',
-        'left-0',
-        'w-full',
-        'z-50',
-        'shadow-sm'
-      )
-    } else {
-      header.classList.remove(
-        'fixed',
-        'top-0',
-        'left-0',
-        'w-full',
-        'z-50',
-        'shadow-sm'
-      )
-    }
-  })
-
-// ===== ACTIVE MENU BY URL =====
-const currentPage = window.location.pathname.split('/').pop()
-
-// DESKTOP NAV
-document.querySelectorAll('.nav-link').forEach(link => {
-  const linkPage = link.getAttribute('href').split('/').pop()
-
-  if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-    link.classList.add('text-[#1e7f3e]', 'font-semibold')
-
-    if (!link.querySelector('.nav-underline')) {
-      link.insertAdjacentHTML(
-        'beforeend',
-        `<span class="nav-underline absolute left-0 bottom-0 w-full h-[2px] bg-[#1e7f3e]"></span>`
-      )
-    }
-  }
-})
-
-// MOBILE NAV
-document.querySelectorAll('.mobile-link').forEach(link => {
-  const linkPage = link.getAttribute('href').split('/').pop()
-
-  if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-    link.classList.add('text-[#1e7f3e]', 'font-semibold')
-  }
-})
-
-  // auto close saat klik menu
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.add('hidden')
-    })
-  })
-
-//Mobile Button 
-const btn = document.getElementById('mobileBtn')
-  const mobileNav = document.getElementById('mobileNav')
-
-  btn.addEventListener('click', () => {
-    mobileNav.classList.toggle('hidden')
-  })
-
-  // auto close saat klik menu
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.add('hidden')
-    })
-  })
-
-// FILTER
-const filterBtn = document.getElementById('filterBtn')
-const categoryFilter = document.getElementById('categoryFilter')
-const newsCards = document.querySelectorAll('.news-card')
-
-filterBtn.addEventListener('click', () => {
-  const selectedCategory = categoryFilter.value
-
-  newsCards.forEach(card => {
-    const cardCategory = card.getAttribute('data-category')
-
-    if (selectedCategory === 'all' || cardCategory === selectedCategory) {
-      card.classList.remove('hidden')
-    } else {
-      card.classList.add('hidden')
-    }
-  })
-})
-
-// categoryFilter.addEventListener('change', () => {
-//   filterBtn.click()
-// })
-
-
-//JOB DETAIL KARIR
 document.addEventListener('DOMContentLoaded', () => {
 
-  const jobItems = document.querySelectorAll('.job-item')
-  const filterBtn = document.getElementById('jobFilterBtn')
-  const regionFilter = document.getElementById('regionFilter')
-
-  const jobTitle = document.getElementById('jobTitle')
-  const jobType = document.getElementById('jobType')
-  const jobLocation = document.getElementById('jobLocation')
-  const jobExperience = document.getElementById('jobExperience')
-  const jobOpenings = document.getElementById('jobOpenings')
-  const jobOverview = document.getElementById('jobOverview')
-  const jobResponsibilities = document.getElementById('jobResponsibilities')
-
-  function loadJob(item) {
-    jobItems.forEach(i =>
-      i.classList.remove('border-green-700', 'bg-green-50')
-    )
-
-    item.classList.add('border-green-700', 'bg-green-50')
-
-    jobTitle.textContent = item.dataset.title
-    jobType.textContent = item.dataset.type
-    jobLocation.textContent = item.dataset.location
-    jobExperience.textContent = item.dataset.experience
-    jobOpenings.textContent = item.dataset.openings
-    jobOverview.textContent = item.dataset.overview
-
-    jobResponsibilities.innerHTML = ''
-    item.dataset.responsibilities.split('|').forEach(res => {
-      const li = document.createElement('li')
-      li.textContent = res
-      jobResponsibilities.appendChild(li)
+  /* =========================
+     FIX HEADER ON SCROLL
+  ========================= */
+  const header = document.getElementById('mainHeader')
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('fixed', window.scrollY > 80)
+      header.classList.toggle('top-0', window.scrollY > 80)
+      header.classList.toggle('left-0', window.scrollY > 80)
+      header.classList.toggle('w-full', window.scrollY > 80)
+      header.classList.toggle('z-50', window.scrollY > 80)
+      header.classList.toggle('shadow-sm', window.scrollY > 80)
     })
   }
 
-  jobItems.forEach(item => {
-    item.addEventListener('click', () => loadJob(item))
-  })
+  /* =========================
+     ACTIVE MENU
+  ========================= */
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html'
 
-  filterBtn.addEventListener('click', () => {
-    const region = regionFilter.value
-
-    jobItems.forEach(item => {
-      if (region === 'all' || item.dataset.region === region) {
-        item.classList.remove('hidden')
-      } else {
-        item.classList.add('hidden')
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const linkPage = link.getAttribute('href')?.split('/').pop()
+    if (linkPage === currentPage) {
+      link.classList.add('text-[#1e7f3e]', 'font-semibold')
+      if (!link.querySelector('.nav-underline')) {
+        link.insertAdjacentHTML(
+          'beforeend',
+          `<span class="nav-underline absolute left-0 bottom-0 w-full h-[2px] bg-[#1e7f3e]"></span>`
+        )
       }
-    })
+    }
   })
 
-  // Auto load first job
-  if (jobItems.length) {
-    loadJob(jobItems[0])
+  /* =========================
+     MOBILE NAV
+  ========================= */
+  const btn = document.getElementById('mobileBtn')
+  const mobileNav = document.getElementById('mobileNav')
+
+  if (btn && mobileNav) {
+    btn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden')
+    })
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden')
+      })
+    })
   }
 
-})
+  /* =========================
+     FILTER (BERITA / PRODUK)
+  ========================= */
+  const filterBtn = document.getElementById('filterBtn')
+  const categoryFilter = document.getElementById('categoryFilter')
+  const cards = document.querySelectorAll('.news-card')
 
-//APPLY KARIR
-const applyBtn = document.querySelector('.bg-green-700') // tombol APPLY job
-const modal = document.getElementById('applyModal')
-const closeModal = document.getElementById('closeModal')
-
-const resumeInput = document.getElementById('resumeInput')
-const resumeName = document.getElementById('resumeName')
-const sendEmailBtn = document.getElementById('sendEmail')
-
-// OPEN MODAL
-applyBtn.addEventListener('click', () => {
-  modal.classList.remove('hidden')
-  modal.classList.add('flex')
-})
-
-// CLOSE MODAL
-closeModal.addEventListener('click', () => {
-  modal.classList.add('hidden')
-})
-
-// SHOW FILE NAME
-resumeInput.addEventListener('change', () => {
-  if (resumeInput.files.length > 0) {
-    resumeName.textContent = `File dipilih: ${resumeInput.files[0].name}`
-    resumeName.classList.remove('hidden')
+  if (filterBtn && categoryFilter && cards.length) {
+    filterBtn.addEventListener('click', () => {
+      const val = categoryFilter.value
+      cards.forEach(card => {
+        card.classList.toggle(
+          'hidden',
+          val !== 'all' && card.dataset.category !== val
+        )
+      })
+    })
   }
-})
 
-// SEND EMAIL (mailto)
-sendEmailBtn.addEventListener('click', () => {
-  const subject = encodeURIComponent('Lamaran Pekerjaan - Neo Crop Solutions')
-  const body = encodeURIComponent(
-    'Halo HR Neo Crop Solutions,\n\nSaya ingin mengajukan lamaran pekerjaan.\n\nTerima kasih.'
-  )
-
-  window.location.href =
-    `mailto:andikarahmathidayatulloh@gmail.com?subject=${subject}&body=${body}`
-})
-
-// HERO SLIDER
+  /* =========================
+     HERO SLIDER
+  ========================= */
   const slides = document.querySelectorAll('.hero-slide')
   const dots = document.querySelectorAll('.dot')
-  let current = 0
 
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'))
-    dots.forEach(dot => dot.classList.remove('active'))
+  if (slides.length) {
+    let current = 0
 
-    slides[index].classList.add('active')
-    dots[index].classList.add('active')
-    current = index
+    function showSlide(next) {
+      slides.forEach(s => s.classList.remove('active', 'prev'))
+      dots.forEach(d => d.classList.remove('active'))
+
+      slides[current].classList.add('prev')
+      slides[next].classList.add('active')
+      if (dots[next]) dots[next].classList.add('active')
+
+      current = next
+    }
+
+    setInterval(() => {
+      showSlide((current + 1) % slides.length)
+    }, 4000)
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i))
+    })
   }
 
-  // auto slide
-  setInterval(() => {
-    let next = (current + 1) % slides.length
-    showSlide(next)
-  }, 4000)
+  /* =========================
+     JOB DETAIL (KARIR)
+  ========================= */
+  const jobItems = document.querySelectorAll('.job-item')
+  const jobTitle = document.getElementById('jobTitle')
 
-  // klik dot
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => showSlide(index))
-  })
+  if (jobItems.length && jobTitle) {
+    jobItems.forEach(item => {
+      item.addEventListener('click', () => {
+        jobItems.forEach(i => i.classList.remove('border-green-700', 'bg-green-50'))
+        item.classList.add('border-green-700', 'bg-green-50')
 
+        jobTitle.textContent = item.dataset.title || ''
+      })
+    })
+  }
 
+  /* =========================
+     MODAL APPLY JOB
+  ========================= */
+  const applyBtn = document.querySelector('[data-apply]')
+  const modal = document.getElementById('applyModal')
+  const closeModal = document.getElementById('closeModal')
+
+  if (applyBtn && modal) {
+    applyBtn.addEventListener('click', () => modal.classList.remove('hidden'))
+  }
+
+  if (closeModal && modal) {
+    closeModal.addEventListener('click', () => modal.classList.add('hidden'))
+  }
+
+})

@@ -20,7 +20,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
+<style>
   .hero-slide {
     position: absolute;
     inset: 0;
@@ -477,34 +477,6 @@
    class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
-
-<script>
-  const slides = document.querySelectorAll('.hero-slide')
-  const dots = document.querySelectorAll('.dot')
-  let current = 0
-
-  function showSlide(next) {
-    slides.forEach(slide => slide.classList.remove('active', 'prev'))
-    dots.forEach(dot => dot.classList.remove('active'))
-
-    slides[current].classList.add('prev')
-    slides[next].classList.add('active')
-    dots[next].classList.add('active')
-
-    current = next
-  }
-
-  // AUTO SLIDE
-  setInterval(() => {
-    let next = (current + 1) % slides.length
-    showSlide(next)
-  }, 4000)
-
-  // DOT CLICK
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => showSlide(index))
-  })
-</script>
 
 <script src="../js/script.js"></script>
 
