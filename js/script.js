@@ -61,24 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  /* =========================
-     FILTER (BERITA / PRODUK)
-  ========================= */
-  const filterBtn = document.getElementById('filterBtn')
-  const categoryFilter = document.getElementById('categoryFilter')
-  const cards = document.querySelectorAll('.news-card')
+/* =========================
+   FILTER (BERITA / PRODUK)
+========================= */
+const filterBtn = document.getElementById('filterBtn')
+const categoryFilter = document.getElementById('categoryFilter')
+const cards = document.querySelectorAll('.news-card')
 
-  if (filterBtn && categoryFilter && cards.length) {
-    filterBtn.addEventListener('click', () => {
-      const val = categoryFilter.value
-      cards.forEach(card => {
-        card.classList.toggle(
-          'hidden',
-          val !== 'all' && card.dataset.category !== val
-        )
-      })
+if (filterBtn && categoryFilter && cards.length) {
+  filterBtn.addEventListener('click', () => {
+    const val = categoryFilter.value
+
+    cards.forEach(card => {
+      const categories = card.dataset.category
+        .split(',')
+        .map(c => c.trim())
+
+      card.classList.toggle(
+        'hidden',
+        val !== 'all' && !categories.includes(val)
+      )
     })
-  }
+  })
+}
 
   /* =========================
      HERO SLIDER

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NCS | C-Leverol</title>
+  <title>NCS | Biorizon</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href="../../img/logo_ncs/logo_head.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../img/logo_ncs/logo_head.png">
@@ -144,6 +144,7 @@
         <a href="../../index.html" class="nav-link relative py-2">HOME</a>
         <a href="../../pages/tentang.html" class="nav-link  relative py-2">TENTANG KAMI</a>
         <a href="../../pages/produk.html" class="nav-link relative py-2">PRODUK</a>
+        <a href="../../pages/produk_b2b.html" class="nav-link relative py-2">PRODUK B2B</a>
         <a href="../../pages/testimoni.html" class="nav-link relative py-2">TESTIMONI</a>
         <a href="../../pages/solusi.html" class="nav-link relative py-2">SOLUSI</a>
         <a href="../../pages/berita.html" class="nav-link relative py-2">BERITA</a>
@@ -173,6 +174,7 @@
       <a href="../../index.html" class="mobile-link">HOME</a>
       <a href="../../pages/tentang.html" class="mobile-link">TENTANG KAMI</a>
       <a href="../../pages/produk.html" class="mobile-link">PRODUK</a>
+      <a href="../../pages/produk_b2b.html" class="mobile-link">PRODUK B2B</a>
       <a href="../../pages/testimoni.html" class="mobile-link">TESTIMONI</a>
       <a href="../../pages/solusi.html" class="mobile-link">SOLUSI</a>
       <a href="../../pages/berita.html" class="mobile-link">BERITA</a>
@@ -187,7 +189,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img
-    src="../../img/bg_produk/bg_padi.png"
+    src="../../img/bg_produk/bg_biostimulan.png"
     alt="Background Produk"
     class="absolute inset-0 w-full h-full object-cover z-0"
   >
@@ -198,98 +200,83 @@
       absolute inset-0 z-10
       bg-gradient-to-r
       from-black/60 via-black/40 to-transparent
+
+      [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
       md:[clip-path:polygon(0_0,60%_0,50%_100%,0_100%)]
     "
   ></div>
 
-  <!-- PRODUCT IMAGE -->
+  <!-- TEXT -->
   <div
-    class="absolute z-20 top-1/2 left-[3%] -translate-y-1/2"
+    class="
+      absolute z-20
+      top-1/2 left-[5%]
+      -translate-y-1/2
+      text-white
+      max-w-xl
+    "
   >
-    <img
-      src="../../img/produk/produk_cleverole.png"
-      alt="C-Leverol Product"
-      class="w-[280px] md:w-[400px] drop-shadow-2xl"
-    >
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider">
+      PRODUK BIORIZON
+    </h2>
+
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider text-[#A2CC3B] mt-2">
+      BIOSTIMULAN
+    </h2>
+
+    <p class="mt-4 text-sm md:text-lg font-light">
+      Bahan Berkualitas dan Terpercaya!
+    </p>
   </div>
 
 </section>
 <!-- END HERO -->
 
-<!-- DESKRIPSI PRODUK -->
+<!-- BERITA TERKINI -->
 <section class="pt-20 pb-10 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <img
-      src="../../img/logo_produk/logo_cleverole.png"
-      alt="C-LEVEROLE"
-      class="h-14 md:h-[100px] mb-4"
-    >
+    <!-- TITLE -->
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-7">
+      BIORIZON BIOTECH - BIOSTIMULAN 
+    </h2>
 
-    <p class="text-xl mb-4 font-semibold">Insektisida Kontak Sistemik</p>
-
-    <p class="text-gray-700 w-full leading-relaxed text-lg">
-      C-leverole 50 SC adalah insektisida racun kontak dan lambung berbentuk pekatan suspensi
-      untuk mengendalikan untuk mengendalikan hama putih palsu dan wereng batang coklat
-      pada tanaman padi.
+    <p class="text-gray-600 leading-relaxed w-full mb-10">
+      Biorizon Biotech merupakan pelopor global dalam bidang agronutrisi berbasis mikroalga. Melalui proses biokatalitik yang dipatenkan, teknologi TrieTech®, Biorizon mengekstrak
+    berbagai senyawa bioaktif dari mikroalga dan bakteri. Proses ini melibatkan reaksi multienzimatik yang menghasilkan produk-produk kaya akan fitohormon, asam amino, vitamin
+    (termasuk vitamin B kompleks dan vitamin E), dan antioksidan seperti karotenoid dan fikosianin. 
+    Produk-produk ini dirancang untuk meningkatkan pertumbuhan, kesehatan, dan ketahanan tanaman.
     </p>
 
-  </div>
-</section>
+    <!-- FILTER BAR -->
+    <div class="bg-green-800 rounded-lg overflow-hidden mb-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center">
 
-<!-- MENGAPA HARUS -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
-
-    <!-- LEFT TEXT -->
-    <div>
-      <h3 class="text-2xl font-bold mb-6">
-        Mengapa Harus C-LEVEROLE?
-      </h3>
-
-      <ul class="space-y-4 text-gray-700 list-disc list-inside text-lg">
-        <li><strong>Efektif pada dosis rendah</strong> : Dosis 0,5ml sudah berpengaruh dibandingkan kontrol</li>
-        <li><strong>Toksisitas rendah</strong> : Aman terhadap lingkungan dan binatang bukan sasaran</li>
-        <li><strong>Mengendalikan semua tingkat daur hidup hama</strong> : mulai dari nimfa sampai imago</li>
-      </ul>
-    </div>
-
-    <!-- RIGHT CARD -->
-    <div class="flex md:justify-end">
-      <div class="w-full max-w-sm bg-white rounded-xl shadow-lg overflow-hidden">
-
-        <!-- CARD TOP -->
-        <div class="relative h-48">
-          <img
-            src="../../img/bg_produk/pr_padi.png"
-            alt="Informasi Produk"
-            class="w-full h-full object-cover"
-          >
-
-          <!-- OVERLAY -->
-          <div class="absolute inset-0 p-5 flex flex-col justify-center bg-black/50">
-            <h4 class="text-white font-bold mb-3 tracking-wide text-center">
-              INFORMASI PRODUK
-            </h4>
-
-            <ul class="text-white text-sm space-y-1">
-              <li><strong>Bentuk:</strong> Cair</li>
-              <li><strong>Kemasan:</strong> Botol</li>
-              <li><strong>Isi Bersih:</strong> 100 ml & 250 ml</li>
-            </ul>
-          </div>
+        <!-- FILTER ICON -->
+        <div class="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-green-700 text-white">
+          <i class="fa-solid fa-filter"></i>
+          <span class="font-semibold uppercase text-sm">Filter</span>
         </div>
 
-        <!-- CARD BOTTOM -->
-        <div class="p-5 space-y-3">
-          <p class="font-bold text-red-600 text-sm">
-            Bahan aktif : Klorantaniliprol 50g/l <br>
-            Golongan IRAC : 28 diamide
-          </p>
+        <!-- KATEGORI -->
+        <div class="px-6 py-5">
+          <label class="block text-xs text-white mb-1">Tanaman</label>
+          <select id="categoryFilter"
+            class="w-full bg-white text-sm px-4 py-2 rounded outline-none">
+            <option value="all">- Semua Tanaman -</option>
+            <option value="padi">Padi</option>
+            <option value="bawang_merah">Bawang Merah</option>
+            <option value="semangka">Semangka</option>
+            <option value="cabai">Cabai</option>
+          </select>
+        </div>
 
-          <p class="font-bold text-red-600 text-sm">
-            No. Pendaftaran : RI. 01010120248589
-          </p>
+        <!-- BUTTON -->
+        <div class="px-6 py-5 flex md:justify-end">
+          <button id="filterBtn"
+            class="border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-green-800 transition text-sm font-semibold">
+            Cari
+          </button>
         </div>
 
       </div>
@@ -298,70 +285,168 @@
   </div>
 </section>
 
-<!-- TABEL -->
-<section class="py-20 bg-white">
+<!-- LIST BERITA -->
+<section class="pb-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <h3 class="text-2xl font-bold mb-8">
-      Petunjuk Penggunaan
-    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-    <div class="overflow-x-auto">
-      <table class="w-full border border-gray-300 text-start">
-        <thead class="bg-green-700 text-white">
-          <tr>
-            <th class="p-3 border">Tanaman</th>
-            <th class="p-3 border">Hama Sasaran</th>
-            <th class="p-3 border">Dosis Anjuran</th>
-            <th class="p-3 border">Cara Aplikasi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="bg-gray-50">
-            <td class="p-3 border">Padi</td>
-            <td class="p-3 border">Hama Putih Palsu<br>Cnaphalocrosis medinalis</td>
-            <td class="p-3 border">2 ml/l</td>
-            <td class="p-3 border">Penyemprotan volume tinggi saat intensitas serangan sudah menyampai ambang batas pengendalian</td>
-          </tr>
-          <tr>
-            <td class="p-3 border">Padi</td>
-            <td class="p-3 border">Wereng Batang Coklat<br>Nilaparyata Lugens</td>
-            <td class="p-3 border">2 ml/l</td>
-            <td class="p-3 border">Penyemprotan volume tinggi saat intensitas serangan sudah menyampai ambang batas pengendalian</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- CARD -->
+      <div class="news-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition" data-category="cabai">
+
+        <!-- IMAGE WRAPPER -->
+        <div class="relative h-56 flex items-center justify-center">
+          <!-- BACKGROUND IMAGE -->
+          <img
+            src="../../img/jagung.png"
+            alt="Background Produk"
+            class="absolute inset-0 w-full h-full object-cover blur-[1px]"
+          >
+
+          <!-- OVERLAY (optional biar kontras) -->
+          <div class="absolute inset-0 bg-black/50"></div>
+
+          <!-- PRODUCT IMAGE -->
+          <img
+            src="../../img/produk_b2b/algafert.png"
+            alt="Produk Algafert"
+            class="relative z-10 max-h-full object-contain"
+          >
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-5">
+          <h3 class="font-bold text-base mb-2">
+            ALGAFERT NPK 1-7-3
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-4">
+            Algafert adalah biostimulan komprehensif berbasis mikroalga yang dirancang untuk
+            meningkatkan proses biologis selama siklus tanam
+          </p>
+
+          <a href="../biorizon/algafert.html" class="text-green-700 font-semibold text-sm">
+            Lihat Selengkapnya
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="news-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition" data-category="cabai">
+
+        <!-- IMAGE WRAPPER -->
+        <div class="relative h-56 flex items-center justify-center">
+          <!-- BACKGROUND IMAGE -->
+          <img
+            src="../../img/jagung.png"
+            alt="Background Produk"
+            class="absolute inset-0 w-full h-full object-cover blur-[1px]"
+          >
+
+          <!-- OVERLAY (optional biar kontras) -->
+          <div class="absolute inset-0 bg-black/50"></div>
+
+          <!-- PRODUCT IMAGE -->
+          <img
+            src="../../img/produk_b2b/algafert_eco.png"
+            alt="Produk Algafert Eco"
+            class="relative z-10 max-h-full object-contain"
+          >
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-5">
+          <h3 class="font-bold text-base mb-2">
+            ALGAFERT ECO NPK 1,4-0-8
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-4">
+            Algafert Eco adalah biostimulan komprehensif berbasis mikroalga yang dirancang untuk
+            meningkatkan proses biologis selama siklus tanam
+          </p>
+
+          <a href="../biorizon/algafert_eco.html" class="text-green-700 font-semibold text-sm">
+            Lihat Selengkapnya
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="news-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition" data-category="padi">
+        <div class="relative h-56 flex items-center justify-center">
+          <!-- BACKGROUND IMAGE -->
+          <img
+            src="../../img/padi.png"
+            alt="Background Produk"
+            class="absolute inset-0 w-full h-full object-cover blur-[1px]"
+          >
+
+          <!-- OVERLAY (optional biar kontras) -->
+          <div class="absolute inset-0 bg-black/50"></div>
+
+          <!-- PRODUCT IMAGE -->
+          <img
+            src="../../img/produk_b2b/biofat_600.png"
+            alt="Produk Biofat 600"
+            class="relative z-10 max-h-full object-contain"
+          >
+        </div>
+
+        <div class="p-5">
+          <h3 class="font-bold text-base mb-2">
+            BIOFAT 600
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-4">
+            Biofat 600 adalah pupuk organik dari Biorizon Biotech yang mengandung nitrogen, kalsium,
+            dan asam amino bebas dari hidrolisat biomassa mikroalga.
+          </p>
+
+          <a href="../biorizon/biofat_600.html" class="text-green-700 font-semibold text-sm">
+            Lihat Selengkapnya
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition" data-category="padi">
+        <div class="relative h-56 flex items-center justify-center">
+          <!-- BACKGROUND IMAGE -->
+          <img
+            src="../../img/padi.png"
+            alt="Background Produk"
+            class="absolute inset-0 w-full h-full object-cover blur-[1px]"
+          >
+
+          <!-- OVERLAY (optional biar kontras) -->
+          <div class="absolute inset-0 bg-black/50"></div>
+
+          <!-- PRODUCT IMAGE -->
+          <img
+            src="../../img/produk_b2b/photopower.png"
+            alt="Produk Cleverole"
+            class="relative z-10 max-h-full object-contain"
+          >
+        </div>
+
+        <div class="p-5">
+          <h3 class="font-bold text-base mb-2">
+            PHOTOPOWER
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-4">
+            Photopower adalah larutan pupuk anorganik makro dari Biorizon Biotech yang kaya akan
+            magnesium sulfat dan asam amino.
+          </p>
+
+          <a href="../biorizon/photopower.html" class="text-green-700 font-semibold text-sm">
+            Lihat Selengkapnya
+          </a>
+        </div>
+      </div>
+      <!-- DUPLIKASI CARD SESUAI KEBUTUHAN -->
+      <!-- copy-paste card di atas -->
+
     </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="py-20 bg-gray-400 text-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-
-    <h3 class="text-3xl font-extrabold mb-4">
-      Tertarik Dengan Produk Ini?
-    </h3>
-
-    <p class="text-sm max-w-xl mx-auto mb-8">
-      Hubungi tim kami untuk informasi lebih lanjut atau 
-      klik brosuk produk untuk melihat detail produk.
-    </p>
-
-    <a
-      href="../../pages/kontak.html"
-      class="inline-block bg-white text-green-800 px-8 py-3 mr-1 rounded-lg font-semibold hover:bg-gray-100 transition"
-    >
-      Hubungi Kami
-    </a>
-
-    <a
-      href="https://drive.google.com/file/d/1tAW6DbNkTwaw3smX7vULWBk2KPMcvw4N/view?usp=sharing"
-      class="inline-block bg-green-800 text-white px-8 ml-1 py-3 rounded-lg font-regular hover:bg-green-900 transition"
-    >
-      Brosur Produk
-    </a>
 
   </div>
 </section>
@@ -404,10 +489,10 @@
       <div>
         <h4 class="font-semibold mb-4">SERVICES</h4>
         <ul class="space-y-2 text-sm text-green-100">
-          <li><a href="../../pages/produk/pestisida.html" class="hover:text-white">Pestisida</a></li>
-          <li><a href="../../pages/produk/pupuk.html" class="hover:text-white">Pupuk</a></li>
-          <li><a href="../../pages/produk/benih.html" class="hover:text-white">Benih</a></li>
-          <li><a href="../../pages/kontak.html" class="hover:text-white">Konsultasi</a></li>
+          <li><a href="../pages/produk/insektisida.html" class="hover:text-white">Insektisida</a></li>
+          <li><a href="../pages/produk/fungisida.html" class="hover:text-white">Fungisida</a></li>
+          <li><a href="../pages/produk/biostimulan.html" class="hover:text-white">Biostimulan</a></li>
+          <li><a href="../pages/kontak.html" class="hover:text-white">Konsultasi</a></li>
         </ul>
       </div>
 

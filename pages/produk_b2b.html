@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NCS | Solusi</title>
+  <title>NCS | Produk B2B</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href="../img/logo_ncs/logo_head.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../img/logo_ncs/logo_head.png">
@@ -19,6 +19,41 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(100%);
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .hero-slide.active {
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .hero-slide.prev {
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: white;
+    transform: scale(1.2);
+  }
+</style>
 
 </head>
 <body class="text-gray-800">
@@ -135,6 +170,7 @@
 </div>
 
 <!-- MAIN HEADER -->
+<!-- HEADER -->
 <header id="mainHeader" class="bg-white border-b fixed top-0 left-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-8">
     <div class="flex items-center justify-between h-20">
@@ -189,7 +225,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img
-    src="../img/bg/bg_solusi.png"
+    src="../img/bg/bg_produk.png"
     alt="Background Produk"
     class="absolute inset-0 w-full h-full object-cover z-0"
   >
@@ -217,124 +253,135 @@
     "
   >
     <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider">
-      SOLUSI NYATA
+      PRODUK B2B
     </h2>
 
     <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider text-[#A2CC3B] mt-2">
-      PETANI BAHAGIA
+      NEO CROP SOLUTIONS
     </h2>
 
     <p class="mt-4 text-sm md:text-lg font-light">
-      Solusi Hemat, Petani Pintar
+      Terjamin Kualitas dan Terpercaya!
     </p>
   </div>
 
 </section>
 <!-- END HERO -->
 
-<!-- MENGAPA MEMILIH -->
-<section class="py-20 bg-white">
+<!-- PRODUK UNGGULAN -->
+<section id="produk" class="pt-20 pb-10 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-6 leading-snug">
-      Mengapa Memilih
-      <span class="text-green-700">Neo Crop Solutions</span>
-    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-    <p class="text-gray-600 leading-relaxed w-full mb-4">
-      Kami berkomitmen untuk menjadi yang terdepan dalam inovasi pertanian,
-      menghadirkan solusi cerdas dan efisien bagi para petani di kawasan Asia
-      Selatan. Kami meningkatkan nilai bagi petani dan rantai nilai pertanian
-      dengan menekankan edukasi petani dan membangun kemitraan, dengan tujuan
-      mendorong peningkatan signifikan dalam praktik pertanian.
-    </p>
+      <!-- CARD 1 -->
+      <a href="../pages/biorizon/algafert.html"
+         class="relative group h-56 rounded-xl overflow-hidden shadow-lg">
 
-    <p class="text-gray-600 leading-relaxed w-full">
-      Pendiri kami, Bapak Surin Shah, memanfaatkan pengalaman luasnya di industri
-      kimia pertanian dan pemahaman tentang lanskap pasar yang dinamis untuk
-      bermitra dengan pemasok yang berfokus pada penelitian dan pengembangan (R&D),
-      dalam memenuhi kebutuhan petani yang terus berkembang. Dedikasi terhadap
-      inovasi ini memastikan Neo Crop Solutions dapat menawarkan solusi terbaru
-      dan paling efektif.
-    </p>
+        <img src="../img/pestisida.png"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <!-- overlay diagonal -->
+        <div class="absolute inset-0 bg-green-700/70"
+        style="clip-path: polygon(0 0, 75% 0, 45% 100%, 0% 100%);"></div>
+
+        <!-- text -->
+        <div class="relative z-10 p-6 text-white">
+          <h3 class="text-lg font-bold uppercase leading-snug">
+            Biorizon Biotech - Biostimulan<br>Unggulan
+          </h3>
+          <p class="mt-2 text-sm opacity-90">
+            Lihat Selengkapnya →
+          </p>
+        </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="../pages/kelpak/alexin.html"
+         class="relative group h-56 rounded-xl overflow-hidden shadow-lg">
+
+        <img src="../img/benih.png"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="absolute inset-0 bg-green-700/70"
+        style="clip-path: polygon(0 0, 75% 0, 45% 100%, 0% 100%);"></div>
+
+        <div class="relative z-10 p-6 text-white">
+          <h3 class="text-lg font-bold uppercase leading-snug">
+            Kelpak - Biostimulan<br>Unggulan
+          </h3>
+          <p class="mt-2 text-sm opacity-90">
+            Lihat Selengkapnya →
+          </p>
+        </div>
+      </a>
 
   </div>
 </section>
 
-<!-- MENJEMBATANI KESENJANGAN -->
-<section class="py-20 bg-gray-700">
+<!-- PRODUK KAMI -->
+<section class="pt-10 pb-20 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- TITLE -->
-    <h3 class="text-white text-xl md:text-2xl font-extrabold mb-10 leading-snug">
-      MENJEMBATANI KESENJANGAN KE PASAR<br>
-      <span class="text-lime-300">PETANI KECIL YANG TERFRAGMENTASI</span>
-    </h3>
+    <h2 class="text-3xl font-bold mb-12">PRODUK KAMI</h2>
 
-    <!-- CARDS -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="space-y-16">
 
-      <!-- CARD 1 -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="bg-green-700 text-white w-6 h-6 rounded flex items-center justify-center text-sm font-bold">
-            1
-          </span>
-          <h4 class="font-bold">Keterlibatan Pelanggan</h4>
-        </div>
-
-        <p class="text-gray-600 text-sm leading-relaxed">
-          Komunikasi langsung dengan pelanggan sangat penting untuk memahami
-          wawasan langsung tentang kebutuhan mereka. Interaksi ini membantu
-          kami memahami kebutuhan mereka, mengatasi masalah, dan mengumpulkan
-          umpan balik yang berharga.
+    <!-- CARD 1 -->
+    <div class="grid md:grid-cols-2 gap-8 items-center border rounded-lg overflow-hidden">
+    <!-- TEXT -->
+    <div class="p-8">
+        <h3 class="text-green-700 text-xl font-bold mb-4">BIORIZON BIOTECH - BIOSTIMULANT</h3>
+        <p class="text-gray-600 mb-6">
+        Biorizon Biotech merupakan pelopor global dalam bidang agronutrisi berbasis mikroalga. Melalui proses biokatalitik yang dipatenkan, teknologi TrieTech®, Biorizon mengekstrak
+        berbagai senyawa bioaktif dari mikroalga dan bakteri. Proses ini melibatkan reaksi multienzimatik yang menghasilkan produk-produk kaya akan fitohormon, asam amino, vitamin
+        (termasuk vitamin B kompleks dan vitamin E), dan antioksidan seperti karotenoid dan fikosianin. 
+        Produk-produk ini dirancang untuk meningkatkan pertumbuhan, kesehatan, dan ketahanan tanaman.
         </p>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="bg-green-700 text-white w-6 h-6 rounded flex items-center justify-center text-sm font-bold">
-            2
-          </span>
-          <h4 class="font-bold">Berbagi Pengetahuan</h4>
-        </div>
-
-        <p class="text-gray-600 text-sm leading-relaxed">
-          Kami memprioritaskan pengembangan sumber daya dan lokakarya
-          yang mendukung wawasan praktis tentang teknik pertanian modern
-          dengan solusi yang tepat, sekaligus mempromosikan keberlanjutan.
-        </p>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="bg-green-700 text-white w-6 h-6 rounded flex items-center justify-center text-sm font-bold">
-            3
-          </span>
-          <h4 class="font-bold">Kemitraan Kolaboratif</h4>
-        </div>
-
-        <p class="text-gray-600 text-sm leading-relaxed">
-          Kami bermaksud memperluas kemitraan dengan universitas pertanian,
-          lembaga penelitian, pemasok berbasis inovasi, dan pemerintah untuk
-          membantu petani kecil mencapai hasil maksimal dari pertanian modern.
-        </p>
-      </div>
-
+        <a href="../pages/produk_b2b/biorizon.html" class="inline-block bg-green-700 text-white px-6 py-2 rounded">
+        Lihat Produk
+        </a>
+    </div>
+    <!-- IMAGE -->
+    <div class="h-64 md:h-80 overflow-hidden rounded-lg">
+        <img
+        src="../img/pestisida.png"
+        class="w-full h-full object-cover"
+        alt="Pestisida"
+        >
+    </div>
     </div>
 
-    <!-- FOOTER TEXT -->
-    <p class="text-white/90 text-sm leading-relaxed w-full">
-      Di Neo Crop Solutions, kami percaya bahwa pertumbuhan berkelanjutan berarti
-      menyediakan solusi yang tidak hanya meningkatkan hasil panen tetapi juga
-      memastikan kelangsungan bisnis bagi petani. Dengan menawarkan solusi
-      perlindungan dan nutrisi tanaman yang berkualitas tinggi dan inovatif,
-      kami membantu petani meningkatkan produktivitas dan profitabilitas jangka
-      panjang.
-    </p>
+    <!-- CARD 2 (ZIG-ZAG) -->
+    <div class="grid md:grid-cols-2 gap-8 items-center border rounded-lg overflow-hidden">
+    <!-- IMAGE -->
+    <div class="order-1 md:order-none h-64 md:h-80 overflow-hidden rounded-lg">
+        <img
+        src="../img/benih.png"
+        class="w-full h-full object-cover"
+        alt="Benih"
+        >
+    </div>
+    <!-- TEXT -->
+    <div class="p-8">
+        <h3 class="text-green-700 text-xl font-bold mb-4">KELPAK - BIOSTIMULANT</h3>
+        <p class="text-gray-600 mb-6">
+        Kelpak merupakan perusahaan yang memproduksi konsentrat rumput laut alami
+        berkualitas tinggi. Produk mereka, yang terbuat dari spesies rumput laut raksasa Ecklonia
+        maxima, dipanen secara manual di perairan bersih dan kaya nutrisi di lepas pantai Afrika
+        Selatan. Proses ekstraksi yang unik memastikan konsistensi dan aktivitas senyawa bioaktif
+        dalam produk akhir. Riset internasional yang berkelanjutan membuktikan kemampuan
+        Kelpak untuk meningkatkan kesehatan, kualitas, dan hasil panen berbagai tanaman,
+        menghasilkan keuntungan bagi petani di seluruh dunia selama lebih dari empat dekade.
+        </p>
+        <a href="../pages/produk_b2b/kelpak.html" class="inline-block bg-green-700 text-white px-6 py-2 rounded">
+        Lihat Produk
+        </a>
+    </div>
+    </div>
 
+    </div>
   </div>
 </section>
 
