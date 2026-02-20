@@ -143,8 +143,59 @@
       <nav class="hidden md:flex gap-8 text-sm font-medium">
         <a href="../../index.html" class="nav-link relative py-2">HOME</a>
         <a href="../../pages/tentang.html" class="nav-link  relative py-2">TENTANG KAMI</a>
-        <a href="../../pages/produk.html" class="nav-link relative py-2">PRODUK</a>
-        <a href="../../pages/produk_b2b.html" class="nav-link relative py-2">PRODUK B2B</a>
+        <div class="relative group">
+          <a href="../../pages/produk.html"
+            class="nav-link py-2 inline-flex items-center">
+            PRODUK
+            <span class="ml-1 text-xs">▾</span>
+          </a>
+
+          <!-- DROPDOWN -->
+          <div
+            class="absolute left-0 mt-2 w-52 bg-white border rounded-lg shadow-lg
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                  transition-all duration-200 z-50">
+
+            <a href="../../pages/produk/insektisida.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Insektisida
+            </a>
+
+            <a href="../../pages/produk/fungisida.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Fungisida
+            </a>
+
+            <a href="../../pages/produk/biostimulan.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Biostimulan
+            </a>
+          </div>
+        </div>
+        <div class="relative group">
+          <a href="../../pages/produk_b2b.html"
+            class="nav-link py-2 inline-flex items-center">
+            PRODUK B2B
+            <span class="ml-1 text-xs">▾</span>
+          </a>
+
+          <!-- DROPDOWN -->
+          <div
+            class="absolute left-0 mt-2 w-52 bg-white border rounded-lg shadow-lg
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                  transition-all duration-200 z-50">
+
+            <a href="../../pages/produk_b2b/biorizon.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Biorizon
+            </a>
+
+            <a href="../../pages/produk_b2b/kelpak.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Kelpak
+            </a>
+          </div>
+        </div>
         <a href="../../pages/testimoni.html" class="nav-link relative py-2">TESTIMONI</a>
         <a href="../../pages/solusi.html" class="nav-link relative py-2">SOLUSI</a>
         <a href="../../pages/berita.html" class="nav-link relative py-2">BERITA</a>
@@ -173,8 +224,59 @@
     <nav class="flex flex-col px-8 py-6 gap-4 text-sm font-medium">
       <a href="../../index.html" class="mobile-link">HOME</a>
       <a href="../../pages/tentang.html" class="mobile-link">TENTANG KAMI</a>
-      <a href="../../pages/produk.html" class="mobile-link">PRODUK</a>
-      <a href="../../pages/produk_b2b.html" class="mobile-link">PRODUK B2B</a>
+      <div class="mobile-link flex flex-col">
+        <!-- BARIS PRODUK -->
+        <div class="flex justify-between items-center">
+          <a href="../../pages/produk.html" class="flex-1">
+            PRODUK
+          </a>
+
+          <button
+            type="button"
+            class="ml-2 text-xs"
+            onclick="this.closest('.mobile-link').querySelector('.submenu').classList.toggle('hidden')">
+            ▾
+          </button>
+        </div>
+
+        <!-- SUBMENU -->
+        <div class="submenu mt-3 ml-4 flex flex-col gap-3 text-sm text-gray-700">
+          <a href="../../pages/produk/insektisida.html" class="hover:text-green-600">
+            Insektisida
+          </a>
+          <a href="../../pages/produk/fungisida.html" class="hover:text-green-600">
+            Fungisida
+          </a>
+          <a href="../../pages/produk/biostimulan.html" class="hover:text-green-600">
+            Biostimulan
+          </a>
+        </div>
+      </div>
+      <div class="mobile-link flex flex-col">
+        <!-- BARIS PRODUK -->
+        <div class="flex justify-between items-center">
+          <a href="../../pages/produk_b2b.html" class="flex-1">
+            PRODUK B2B
+          </a>
+
+          <button
+            type="button"
+            class="ml-2 text-xs"
+            onclick="this.closest('.mobile-link').querySelector('.submenu').classList.toggle('hidden')">
+            ▾
+          </button>
+        </div>
+
+        <!-- SUBMENU -->
+        <div class="submenu mt-3 ml-4 flex flex-col gap-3 text-sm text-gray-700">
+          <a href="../../pages/produk_b2b/biorizon.html" class="hover:text-green-600">
+            Biorizon
+          </a>
+          <a href="../../pages/produk_b2b/kelpak.html" class="hover:text-green-600">
+            Kelpak
+          </a>
+        </div>
+      </div>
       <a href="../../pages/testimoni.html" class="mobile-link">TESTIMONI</a>
       <a href="../../pages/solusi.html" class="mobile-link">SOLUSI</a>
       <a href="../../pages/berita.html" class="mobile-link">BERITA</a>
@@ -461,7 +563,7 @@
 </footer>
 
 <!-- FLOAT WA -->
-<a href="https://wa.me/6281517733335"
+<a href="https://wa.me/6281517733335?text=Halo%20Neo%20Care,%0ASaya%20ingin%20tahu%20produk%20Neo%20Crop%20Solutions"
    class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
   <i class="fa-brands fa-whatsapp"></i>
 </a>

@@ -20,6 +20,41 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<style>
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(100%);
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .hero-slide.active {
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .hero-slide.prev {
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: white;
+    transform: scale(1.2);
+  }
+</style>
+
 </head>
 <body class="text-gray-800">
 
@@ -144,8 +179,59 @@
       <nav class="hidden md:flex gap-8 text-sm font-medium">
         <a href="index.html" class="nav-link relative py-2">HOME</a>
         <a href="pages/tentang.html" class="nav-link relative py-2">TENTANG KAMI</a>
-        <a href="pages/produk.html" class="nav-link relative py-2">PRODUK</a>
-        <a href="pages/produk_b2b.html" class="nav-link relative py-2">PRODUK B2B</a>
+        <div class="relative group">
+          <a href="pages/produk.html"
+            class="nav-link py-2 inline-flex items-center">
+            PRODUK
+            <span class="ml-1 text-xs">▾</span>
+          </a>
+
+          <!-- DROPDOWN -->
+          <div
+            class="absolute left-0 mt-2 w-52 bg-white border rounded-lg shadow-lg
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                  transition-all duration-200 z-50">
+
+            <a href="pages/produk/insektisida.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Insektisida
+            </a>
+
+            <a href="pages/produk/fungisida.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Fungisida
+            </a>
+
+            <a href="pages/produk/biostimulan.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Biostimulan
+            </a>
+          </div>
+        </div>
+        <div class="relative group">
+          <a href="pages/produk_b2b.html"
+            class="nav-link py-2 inline-flex items-center">
+            PRODUK B2B
+            <span class="ml-1 text-xs">▾</span>
+          </a>
+
+          <!-- DROPDOWN -->
+          <div
+            class="absolute left-0 mt-2 w-52 bg-white border rounded-lg shadow-lg
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                  transition-all duration-200 z-50">
+
+            <a href="pages/produk_b2b/biorizon.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Biorizon
+            </a>
+
+            <a href="pages/produk_b2b/kelpak.html"
+              class="block px-4 py-2 hover:bg-green-50">
+              Kelpak
+            </a>
+          </div>
+        </div>
         <a href="pages/testimoni.html" class="nav-link relative py-2">TESTIMONI</a>
         <a href="pages/solusi.html" class="nav-link relative py-2">SOLUSI</a>
         <a href="pages/berita.html" class="nav-link relative py-2">BERITA</a>
@@ -174,8 +260,59 @@
     <nav class="flex flex-col px-8 py-6 gap-4 text-sm font-medium">
       <a href="index.html" class="mobile-link">HOME</a>
       <a href="pages/tentang.html" class="mobile-link">TENTANG KAMI</a>
-      <a href="pages/produk.html" class="mobile-link">PRODUK</a>
-      <a href="pages/produk_b2b.html" class="mobile-link">PRODUK B2B</a>
+      <div class="mobile-link flex flex-col">
+        <!-- BARIS PRODUK -->
+        <div class="flex justify-between items-center">
+          <a href="pages/produk.html" class="flex-1">
+            PRODUK
+          </a>
+
+          <button
+            type="button"
+            class="ml-2 text-xs"
+            onclick="this.closest('.mobile-link').querySelector('.submenu').classList.toggle('hidden')">
+            ▾
+          </button>
+        </div>
+
+        <!-- SUBMENU -->
+        <div class="submenu mt-3 ml-4 flex flex-col gap-3 text-sm text-gray-700">
+          <a href="pages/produk/insektisida.html" class="hover:text-green-600">
+            Insektisida
+          </a>
+          <a href="pages/produk/fungisida.html" class="hover:text-green-600">
+            Fungisida
+          </a>
+          <a href="pages/produk/biostimulan.html" class="hover:text-green-600">
+            Biostimulan
+          </a>
+        </div>
+      </div>
+      <div class="mobile-link flex flex-col">
+        <!-- BARIS PRODUK -->
+        <div class="flex justify-between items-center">
+          <a href="pages/produk_b2b.html" class="flex-1">
+            PRODUK B2B
+          </a>
+
+          <button
+            type="button"
+            class="ml-2 text-xs"
+            onclick="this.closest('.mobile-link').querySelector('.submenu').classList.toggle('hidden')">
+            ▾
+          </button>
+        </div>
+
+        <!-- SUBMENU -->
+        <div class="submenu mt-3 ml-4 flex flex-col gap-3 text-sm text-gray-700">
+          <a href="pages/produk_b2b/biorizon.html" class="hover:text-green-600">
+            Biorizon
+          </a>
+          <a href="pages/produk_b2b/kelpak.html" class="hover:text-green-600">
+            Kelpak
+          </a>
+        </div>
+      </div>
       <a href="pages/testimoni.html" class="mobile-link">TESTIMONI</a>
       <a href="pages/solusi.html" class="mobile-link">SOLUSI</a>
       <a href="pages/berita.html" class="mobile-link">BERITA</a>
@@ -188,46 +325,21 @@
 <!-- HERO SECTION -->
 <section class="relative h-[350px] md:h-[450px] overflow-hidden">
 
-  <!-- BACKGROUND IMAGE -->
-  <img
-    src="img/bg/bg_utama.png"
-    alt="Background Produk"
-    class="absolute inset-0 w-full h-full object-cover z-0"
-  >
+  <!-- BACKGROUND SLIDES -->
+  <div id="heroSlides" class="absolute inset-0 z-0">
+    <img src="img/bg/produk/1.png" class="hero-slide active">
+    <img src="img/bg/produk/2.png" class="hero-slide">
+    <img src="img/bg/produk/3.png" class="hero-slide">
+  </div>
 
-  <!-- DIAGONAL OVERLAY -->
-  <div
-    class="
-      absolute inset-0 z-10
-      bg-gradient-to-r
-      from-black/60 via-black/40 to-transparent
+  <!-- OVERLAY BLACK -->
+  <div class="absolute inset-0 bg-black/10 z-10"></div>
 
-      [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
-      md:[clip-path:polygon(0_0,60%_0,50%_100%,0_100%)]
-    "
-  ></div>
-
-  <!-- TEXT -->
-  <div
-    class="
-      absolute z-20
-      top-1/2 left-[5%]
-      -translate-y-1/2
-      text-white
-      max-w-xl
-    "
-  >
-    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider">
-      SELAMAT DATANG
-    </h2>
-
-    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wider text-[#A2CC3B] mt-2">
-      SOBAT NCS !
-    </h2>
-
-    <p class="mt-4 text-sm md:text-lg font-light">
-      Solusi Hemat, Petani Pintar
-    </p>
+  <!-- DOT INDICATOR -->
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
   </div>
 
 </section>
@@ -566,7 +678,7 @@
 </footer>
 
 <!-- FLOAT WA -->
-<a href="https://wa.me/6281517733335"
+<a href="https://wa.me/6281517733335?text=Halo%20Neo%20Care,%0ASaya%20ingin%20tahu%20produk%20Neo%20Crop%20Solutions"
    class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
